@@ -8,10 +8,7 @@ public class Main {
             System.out.println("kekekeke");
             System.out.println("kekekeke");
 
-
-
-
-
+            System.out.println("kekekeke");
         }
     }
 }
