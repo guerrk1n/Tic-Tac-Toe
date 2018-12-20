@@ -6,6 +6,7 @@ public class Main {
 
         for(int i=0; i<=5; i++){
 
-        System.out.println("GIT и INTELIJ =)");}
+        System.out.println("");
+        }
     }
 }
