@@ -21,7 +21,7 @@ public class Stack<T> {
     }
 
     T peek() {
-        return (T) st[pop];
+        return (T) st[top];
     }
 
     boolean isEmpty() {
