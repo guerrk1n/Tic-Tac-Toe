@@ -64,7 +64,24 @@ public class Graph {
     void dfs() {
         vertexList.get(0).wasVisited = true;
         displayVertex(0);
-        //theStack.
+        theStack.push(0);
+
+        while( !theStack.isEmpty() ) {
+            int v = getAdjUnvisitedVertex(theStack.peek());
+            if (v == -1) {
+                theStack.pop();
+            }
+            else {
+                vertexList.get(v).wasVisited = true;
+                displayVertex(v);
+                theStack.push(v);
+            }
+
+        }
+
+        for (int i = 0; i < vertexList.size(); i++) {
+            vertexList.get(i).wasVisited = false;
+        }
     }
 
     int getAdjUnvisitedVertex(int v) {
