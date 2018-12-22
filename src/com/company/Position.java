@@ -19,7 +19,7 @@ public abstract class Position {
         table[x][y] = 'Y';
     }
 
-    int getNumersMoves() {
+    int getNumbersMoves() {
         int ans = 0;
         for (int i = 0; i <= 2; i++) {
             for (int k = 0; k <= 2; k++) {
