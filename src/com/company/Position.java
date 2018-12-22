@@ -2,12 +2,21 @@ package com.company;
 
 public abstract class Position {
     Object[][] table = new Object[3][3];
-
+    int x;
+    int y;
     //X is a player, so let's make X will be a char X;
     //We will change '0' to Y. I think, that way we will be easier to se the difference.
 
     Position(Object[][] table) {
         this.table = table;
+    }
+
+    void makeMoveMan(int x, int y) {
+        table[x][y] = 'X';
+    }
+
+    void makeMoveBot(int x, int y) {
+        table[x][y] = 'Y';
     }
 
     Position() {
