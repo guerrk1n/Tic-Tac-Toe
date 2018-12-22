@@ -61,6 +61,12 @@ public class Graph {
         }
     }
 
+    void dfs() {
+        vertexList.get(0).wasVisited = true;
+        displayVertex(0);
+        //theStack.
+    }
+
     int getAdjUnvisitedVertex(int v) {
         for(int j = 0; j< vertexList.size(); j++) {
             if (adjMat[v][j] == 1 && vertexList.get(j).wasVisited == false) {
@@ -69,6 +75,7 @@ public class Graph {
         }
         return -1;
     }
+
 
     //void Move(int[] a) {};
 
