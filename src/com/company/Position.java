@@ -19,6 +19,18 @@ public abstract class Position {
         table[x][y] = 'Y';
     }
 
+    int getNumersMoves() {
+        int ans = 0;
+        for (int i = 0; i <= 2; i++) {
+            for (int k = 0; k <= 2; k++) {
+                if (table[i][k].equals(0)) {
+                    ans++;
+                }
+            }
+        }
+        return ans;
+    }
+
     Position() {
         for (int i = 0; i <= 2; i++) {
             for (int k = 0; k <= 2; i++) {
