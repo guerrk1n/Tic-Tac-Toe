@@ -5,7 +5,7 @@ public abstract class Position {
     int x;
     int y;
     //X is a player, so let's make X will be a char X;
-    //We will change '0' to Y. I think, that way we will be easier to se the difference.
+    //We will change '0' to Y. I think, that way we will be easier to see the difference.
 
     Position(Object[][] table) {
         this.table = table;
