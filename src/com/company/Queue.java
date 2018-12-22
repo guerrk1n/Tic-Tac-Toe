@@ -20,17 +20,16 @@ public class Queue<T> {
     }
 
     T remove() {
-        T temp = (T)queArray[front++];
+        T temp = (T) queArray[front++];
         if (front == SIZE) {
             front = 0;
         }
-        return (T)temp;
+        return (T) temp;
     }
 
 
-
     public boolean isEmpty() {
-        return ( rear + 1==front || (front + SIZE - 1 == rear) );
+        return (rear + 1 == front || (front + SIZE - 1 == rear));
     }
 
 

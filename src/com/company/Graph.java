@@ -17,7 +17,7 @@ public class Graph {
     Graph() {
         adjMat = new int[MAX_VERTS][MAX_VERTS];
         vertexList = new ArrayList<>();
-        for(int j = 0; j < MAX_VERTS; j++) {
+        for (int j = 0; j < MAX_VERTS; j++) {
             for (int k = 0; k < MAX_VERTS; k++) {
                 adjMat[j][k] = 0;
             }
@@ -46,17 +46,15 @@ public class Graph {
         theQueue.insert(0);
         int v2;
 
-        while( !theQueue.isEmpty() )
-        {
+        while (!theQueue.isEmpty()) {
             int v1 = theQueue.remove();
-            while( (v2 = getAdjUnvisitedVertex(v1)) != -1 ) {
+            while ((v2 = getAdjUnvisitedVertex(v1)) != -1) {
                 vertexList.get(v2).wasVisited = true;
                 displayVertex(v2);
                 theQueue.insert(v2);
             }
         }
-        for (int i = 0; i < MAX_VERTS; i++)
-        {
+        for (int i = 0; i < MAX_VERTS; i++) {
             vertexList.get(i).wasVisited = false;
         }
     }
@@ -66,12 +64,11 @@ public class Graph {
         displayVertex(0);
         theStack.push(0);
 
-        while( !theStack.isEmpty() ) {
+        while (!theStack.isEmpty()) {
             int v = getAdjUnvisitedVertex(theStack.peek());
             if (v == -1) {
                 theStack.pop();
-            }
-            else {
+            } else {
                 vertexList.get(v).wasVisited = true;
                 displayVertex(v);
                 theStack.push(v);
@@ -79,14 +76,14 @@ public class Graph {
 
         }
 
-        for (int i = 0; i < vertexList.size(); i++) {
-            vertexList.get(i).wasVisited = false;
+        for (Vertex aVertexList : vertexList) {
+            aVertexList.wasVisited = false;
         }
     }
 
     int getAdjUnvisitedVertex(int v) {
-        for(int j = 0; j< vertexList.size(); j++) {
-            if (adjMat[v][j] == 1 && vertexList.get(j).wasVisited == false) {
+        for (int j = 0; j < vertexList.size(); j++) {
+            if (adjMat[v][j] == 1 && !vertexList.get(j).wasVisited) {
                 return j;
             }
         }

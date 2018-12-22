@@ -39,7 +39,7 @@ public abstract class Position {
         }
     }
 
-    boolean isGameOver(){
+    boolean isGameOver() {
         if (table[0][0].equals('X'))
             if (table[0][1].equals('X'))
                 if (table[0][2].equals('X'))
@@ -107,7 +107,9 @@ public abstract class Position {
                 if (table[2][0].equals('Y'))
                     return true;
         return false;
-    };
+    }
+
+
     //boolean isGoodEnd(){};
 
     //Vertex MoveBack(){};
