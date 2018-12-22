@@ -1,6 +1,6 @@
 package com.company;
 
-public class Queue<T extends Integer> {
+public class Queue<T> {
     private final int SIZE = 20;
     private Object[] queArray;
     private int front;
@@ -27,8 +27,10 @@ public class Queue<T extends Integer> {
         return (T)temp;
     }
 
+
+
     public boolean isEmpty() {
-        return ( rear+1==front || (front+SIZE - 1 == rear) );
+        return ( rear + 1==front || (front + SIZE - 1 == rear) );
     }
 
 

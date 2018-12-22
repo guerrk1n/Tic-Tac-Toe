@@ -13,7 +13,7 @@ public class Vertex {
     }
 
     Vertex(char label) {
-        this.date = date;
+        this.label = label;
         this.wasVisited = false;
     }
 
