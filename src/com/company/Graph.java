@@ -91,7 +91,7 @@ public class Graph {
     }
 
 
-    //void Move(int[] a) {};
+    //void Move(int x, int y) {};
 
     //Graph createNewGraph(int a) {};
 

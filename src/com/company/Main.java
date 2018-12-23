@@ -23,7 +23,7 @@ public class Main extends Application {
 
         for (int i = 0; i <= 2; i++) {
             for (int k = 0; k <= 2; k++) {
-                System.out.print(mas[i][k]);
+                System.out.print(mas[i][k] + " ");
             }
             System.out.println("");
         }
