@@ -21,7 +21,7 @@ public class Graph {
         theStack = new Stack<>();
     }
 
-    void addVertex(char label) {
+    void addVertex(String label) {
         vertexList.add(new Vertex(label));
     }
 
@@ -84,7 +84,14 @@ public class Graph {
         return -1;
     }
 
-
+    void printAdjMat() {
+        for (int i = 0; i < 10; i++) {
+            for (int k = 0; k < 10; k++) {
+                System.out.print(adjMat[i][k] + " ");
+            }
+            System.out.println("");
+        }
+    }
     //void Move(int x, int y) {};
 
     //Graph createNewGraph(int a) {};

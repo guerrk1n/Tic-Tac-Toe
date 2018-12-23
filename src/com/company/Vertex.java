@@ -3,7 +3,7 @@ package com.company;
 import java.util.Date;
 
 public class Vertex {
-    char label;
+    String label;
     private Date date;
     public boolean wasVisited;
 
@@ -12,7 +12,7 @@ public class Vertex {
         this.wasVisited = false;
     }
 
-    Vertex(char label) {
+    Vertex(String label) {
         this.label = label;
         this.wasVisited = false;
     }
