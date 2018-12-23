@@ -3,9 +3,9 @@ package com.company;
 import java.util.ArrayList;
 
 public class Graph {
-    final int MAX_VERTS = 20;
+    final int MAX_VERTS = 1000;
 
-    private int adjMat[][];
+    private int adjMat[][] = new int[1000][1000];
     private ArrayList<Vertex> vertexList;
 
     private Queue<Integer> theQueue;
@@ -15,13 +15,7 @@ public class Graph {
     Position rigntNow;
 
     Graph() {
-        adjMat = new int[MAX_VERTS][MAX_VERTS];
         vertexList = new ArrayList<>();
-        for (int j = 0; j < MAX_VERTS; j++) {
-            for (int k = 0; k < MAX_VERTS; k++) {
-                adjMat[j][k] = 0;
-            }
-        }
 
         theQueue = new Queue<>();
         theStack = new Stack<>();
