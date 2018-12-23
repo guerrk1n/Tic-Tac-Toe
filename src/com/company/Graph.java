@@ -12,17 +12,21 @@ public class Graph {
     private Stack<Integer> theStack;
 
 
-    Position rigntNow;
+    Position rightNow;
 
     Graph() {
         vertexList = new ArrayList<>();
-        rigntNow = new Position();
+        rightNow = new Position();
         theQueue = new Queue<>();
         theStack = new Stack<>();
     }
 
     void addVertex(String label) {
-        vertexList.add(new Vertex(label));
+        vertexList.add(new Vertex());
+    }
+
+    void addVertex(int x, int y, int level) {
+        vertexList.add(new Vertex(x, y, level));
     }
 
     void addEdge(int start, int end) {
@@ -85,8 +89,8 @@ public class Graph {
     }
 
     void printAdjMat() {
-        for (int i = 0; i < 10; i++) {
-            for (int k = 0; k < 10; k++) {
+        for (int i = 0; i < 20; i++) {
+            for (int k = 0; k < 20; k++) {
                 System.out.print(adjMat[i][k] + " ");
             }
             System.out.println("");
@@ -94,7 +98,22 @@ public class Graph {
     }
     //void Move(int x, int y) {};
 
-    //Graph createNewGraph(int a) {};
+    void createNewGraphs() {
+        while(true) {
+            for (int level = rightNow.TABLE_SIZE * rightNow.TABLE_SIZE - 1; level > 0 ; level--) {
+                for (int i = 0; i < rightNow.TABLE_SIZE; i++) {
+                    for (int k = 0; k < rightNow.TABLE_SIZE; k++) {
+                        if (rightNow.table[i][k].equals(0)) {
+                            for (int m = 0; m < level; m++) { //m < level to be changed
+                                addVertex(i, k, level);
+                                //addEdge();
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    };
 
 
 }

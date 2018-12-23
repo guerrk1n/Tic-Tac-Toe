@@ -15,14 +15,30 @@ public class Main extends Application {
     public static void main(String[] args) {
         Graph mainGraph = new Graph();
         mainGraph.addVertex("Root");
-        for (int i = 1; i < mainGraph.rigntNow.getNumbersMoves(); i++) {
-            mainGraph.addVertex("i");
-            mainGraph.addEdge(0, i);
+        int level = 9; /*level of our graph. We use it for counting the unplayed moves of the the game */
+        int number = 1; /*the index of the adjMat*/
+        for (int i = 0; i < mainGraph.rightNow.TABLE_SIZE; i++) {
+            for (int k = 0; k < mainGraph.rightNow.TABLE_SIZE; k++) {
+                mainGraph.addVertex(i, k, level);
+                mainGraph.addEdge(0, number++);
+            }
         }
         mainGraph.printAdjMat();
-        launch(args);
-        mainGraph.rigntNow.makeMoveMan(1,1);
-        //
+        mainGraph.rightNow.makeMoveMan(1,1);
+        System.out.println("");
+        mainGraph.rightNow.printTable();
+        //launch(args);
+        /*
+        while(true) {
+            mainGraph.rightNow.makeMoveMan(1,1);
+            mainGraph.rightNow.printTable();
+            System.out.println();
+            mainGraph.printAdjMat();
+            mainGraph.createNewGraphs();
+            if (mainGraph.rightNow.isGameOver()) break;
+        }
+        */
+
 
     }
 

@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class Vertex {
     String label;
+    int x; int y; int level;
     private Date date;
     public boolean wasVisited;
 
@@ -11,7 +12,12 @@ public class Vertex {
         this.date = date;
         this.wasVisited = false;
     }
-
+    Vertex(int x, int y, int level) {
+        this.x = x;
+        this.y = y;
+        this.level = level;
+        this.wasVisited = false;
+    }
     Vertex(String label) {
         this.label = label;
         this.wasVisited = false;

@@ -1,7 +1,7 @@
 package com.company;
 
 public class Position {
-    private int TABLE_SIZE = 3;
+    final int TABLE_SIZE = 3;
     Object[][] table = new Object[TABLE_SIZE][TABLE_SIZE];
     int x;
     int y;
@@ -33,8 +33,8 @@ public class Position {
     }
 
     Position() {
-        for (int i = 0; i <= 2; i++) {
-            for (int k = 0; k <= 2; i++) {
+        for (int i = 0; i < TABLE_SIZE; i++) {
+            for (int k = 0; k < TABLE_SIZE; k++) {
                 table[i][k] = 0;
             }
         }
@@ -118,6 +118,14 @@ public class Position {
         return false;
     }
 
+    void printTable() {
+        for (int i = 0; i < TABLE_SIZE; i++) {
+            for (int k = 0; k < TABLE_SIZE; k++) {
+                System.out.print(table[i][k] + " ");
+            }
+            System.out.println("");
+        }
+    }
 
     boolean isGoodEnd(){
         if (table[0][0].equals('Y'))
