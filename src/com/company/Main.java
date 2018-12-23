@@ -15,13 +15,14 @@ public class Main extends Application {
     public static void main(String[] args) {
         Graph mainGraph = new Graph();
         mainGraph.addVertex("Root");
-        for (int i = 1; i < 11; i++) {
+        for (int i = 1; i < mainGraph.rigntNow.getNumbersMoves(); i++) {
             mainGraph.addVertex("i");
             mainGraph.addEdge(0, i);
         }
         mainGraph.printAdjMat();
-
-        //launch(args);
+        launch(args);
+        mainGraph.rigntNow.makeMoveMan(1,1);
+        //
 
     }
 

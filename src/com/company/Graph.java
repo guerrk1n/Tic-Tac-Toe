@@ -16,7 +16,7 @@ public class Graph {
 
     Graph() {
         vertexList = new ArrayList<>();
-
+        rigntNow = new Position();
         theQueue = new Queue<>();
         theStack = new Stack<>();
     }
