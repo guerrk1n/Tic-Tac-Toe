@@ -35,8 +35,8 @@ public class AlternativeGraph {
         for (int i = 0; i < 20; i++) {
             for (int k = 0; k < 20; k++) {
                 System.out.print(adj_Mat[i][k] + " ");
+                System.out.println("");
             }
-            System.out.println("");
         }
     }
 
@@ -49,11 +49,13 @@ public class AlternativeGraph {
            for (int i = 0; i < rightNow.TABLE_SIZE; i++) {
                for  (int k = 0; k < rightNow.TABLE_SIZE; k++) {
                    addAlternativeVertex(i, k, level, alternativeVertexList.get(0));
-                   addConnection(alternativeVertexList.get(alternativeVertexList.size()), alternativeVertexList.get(0));
+                   addConnection(alternativeVertexList.get(
+                           alternativeVertexList.size()),
+                           alternativeVertexList.get(0));
                }
            }
-
         }
+        level--;
 
     }
 }
