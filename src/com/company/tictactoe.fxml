@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="com.company.Main">
     <MenuBar prefHeight="0.0" prefWidth="466.0" VBox.vgrow="NEVER">
         <Menu mnemonicParsing="false" text="File">
@@ -42,14 +42,23 @@
         </Menu>
     </MenuBar>
     <AnchorPane prefHeight="294.0" prefWidth="433.0" VBox.vgrow="ALWAYS">
-        <Button layoutX="295.0" layoutY="113.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0"/>
-        <Button layoutX="345.0" layoutY="113.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0"/>
-        <Button layoutX="345.0" layoutY="163.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0"/>
-        <Button layoutX="295.0" layoutY="163.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0"/>
-        <Button layoutX="245.0" layoutY="163.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0"/>
-        <Button layoutX="245.0" layoutY="213.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0"/>
-        <Button layoutX="295.0" layoutY="213.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0"/>
-        <Button layoutX="345.0" layoutY="213.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0"/>
-        <Button layoutX="245.0" layoutY="113.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0"/>
+        <Button id="button2" fx:id="button2" layoutX="295.0" layoutY="113.0" mnemonicParsing="false"
+                onAction="#ButtonClick" prefHeight="50.0" prefWidth="50.0"/>
+        <Button id="button3" fx:id="button3" layoutX="345.0" layoutY="113.0" mnemonicParsing="false"
+                onAction="#ButtonClick" prefHeight="50.0" prefWidth="50.0"/>
+        <Button id="button6" fx:id="button6" layoutX="345.0" layoutY="163.0" mnemonicParsing="false"
+                onAction="#ButtonClick" prefHeight="50.0" prefWidth="50.0"/>
+        <Button id="button5" fx:id="button5" layoutX="295.0" layoutY="163.0" mnemonicParsing="false"
+                onAction="#ButtonClick" prefHeight="50.0" prefWidth="50.0"/>
+        <Button id="button4" fx:id="button4" layoutX="245.0" layoutY="163.0" mnemonicParsing="false"
+                onAction="#ButtonClick" prefHeight="50.0" prefWidth="50.0"/>
+        <Button id="button7" fx:id="button7" layoutX="245.0" layoutY="213.0" mnemonicParsing="false"
+                onAction="#ButtonClick" prefHeight="50.0" prefWidth="50.0"/>
+        <Button id="button8" fx:id="button8" layoutX="295.0" layoutY="213.0" mnemonicParsing="false"
+                onAction="#ButtonClick" prefHeight="50.0" prefWidth="50.0"/>
+        <Button id="button9" fx:id="button9" layoutX="345.0" layoutY="213.0" mnemonicParsing="false"
+                onAction="#ButtonClick" prefHeight="50.0" prefWidth="50.0"/>
+        <Button id="button1" fx:id="button1" layoutX="245.0" layoutY="113.0" mnemonicParsing="false"
+                onAction="#ButtonClick" prefHeight="50.0" prefWidth="50.0"/>
     </AnchorPane>
 </VBox>
