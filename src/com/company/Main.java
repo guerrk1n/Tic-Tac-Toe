@@ -11,9 +11,6 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
 
-import java.awt.*;
-import java.io.InputStream;
-
 import javafx.scene.image.Image;
 
 
@@ -21,8 +18,7 @@ public class Main extends Application {
 
     @FXML
     Button button1, button2, button3, button4, button5, button6, button7, button8, button9;
-    InputStream input = getClass().getResourceAsStream("cross.png");
-    Image image = new Image(input, 20, 20, true, true);
+    Image image = new Image(getClass().getResourceAsStream("cross.png"), 20, 20, true, true);
 
 
     public static void main(String[] args) {
@@ -68,7 +64,7 @@ public class Main extends Application {
 
     }
 
-    int counter[] = new int[9]; // checking of was the button pressed?
+    private int counter[] = new int[9]; // checking of was the button pressed?
 
     public void ButtonClick(ActionEvent actionEvent) {
 
