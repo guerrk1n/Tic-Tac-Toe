@@ -5,7 +5,10 @@ import java.util.ArrayList;
 public class Graph {
     final int MAX_VERTS = 1000;
 
-    private int adjMat[][] = new int[1000][1000];
+    int z = 406;
+
+    private byte adjMat[][] = new byte[z][z];
+
     private ArrayList<Vertex> vertexList;
 
     private Queue<Integer> theQueue;
@@ -89,8 +92,8 @@ public class Graph {
     }
 
     void printAdjMat() {
-        for (int i = 0; i < 20; i++) {
-            for (int k = 0; k < 20; k++) {
+        for (int i = 0; i < z; i++) {
+            for (int k = 0; k < z; k++) {
                 System.out.print(adjMat[i][k] + " ");
             }
             System.out.println("");
@@ -99,21 +102,35 @@ public class Graph {
     //void Move(int x, int y) {};
 
     void createNewGraphs() {
-        while(true) {
-            for (int level = rightNow.TABLE_SIZE * rightNow.TABLE_SIZE - 1; level > 0 ; level--) {
-                for (int i = 0; i < rightNow.TABLE_SIZE; i++) {
-                    for (int k = 0; k < rightNow.TABLE_SIZE; k++) {
-                        if (rightNow.table[i][k].equals(0)) {
-                            for (int m = 0; m < level; m++) { //m < level to be changed
-                                addVertex(i, k, level);
-                                //addEdge();
-                            }
+        int number_of_string_in_graph = 0;
+        int vertex_level = 1;
+        for(int j=0; j<1; j++) {
+            for (int level = 9/*9*/; level > 0; level--) {
+                for (int i = 0; i < 3; i++) {
+                    for (int k = 0; k < 3; k++) {
+                        for (int m = 0; m < level; m++) { //m < level to be changed
+
+                            addVertex(i, k, level);
+                            addEdge(number_of_string_in_graph, vertex_level++);
+
                         }
+                        number_of_string_in_graph++;
+
+                        System.out.println(vertex_level);
                     }
                 }
+               // System.out.println("-----------------------");
+                //printAdjMat();
+
+                if(level == 0){
+                    break;
+                }
             }
+
         }
-    };
+    }
+
+    ;
 
 
 }

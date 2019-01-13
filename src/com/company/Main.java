@@ -26,22 +26,29 @@ public class Main extends Application {
 
 
     public static void main(String[] args) {
+
         Graph mainGraph = new Graph();
         mainGraph.addVertex("Root");
-        int level = 9; /*level of our graph. We use it for counting the unplayed moves of the the game */
-        int number = 1; /*the index of the adjMat*/
+        /*
+        int level = 9;
+        int number = 1;
         for (int i = 0; i < mainGraph.rightNow.TABLE_SIZE; i++) {
             for (int k = 0; k < mainGraph.rightNow.TABLE_SIZE; k++) {
                 mainGraph.addVertex(i, k, level);
                 mainGraph.addEdge(0, number++);
             }
         }
+        */
+        mainGraph.createNewGraphs();
+
+        //System.out.println("вывыв");
         mainGraph.printAdjMat();
         mainGraph.rightNow.makeMoveMan(1, 1);
         System.out.println("");
-        mainGraph.rightNow.printTable();
-        //mainGraph.createNewGraphs();
-        launch(args);
+
+        //mainGraph.rightNow.printTable();
+
+        //launch(args);
         /*
         while(true) {
             mainGraph.rightNow.makeMoveMan(1,1);

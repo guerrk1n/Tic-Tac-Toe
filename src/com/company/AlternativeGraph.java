@@ -38,6 +38,7 @@ public class AlternativeGraph {
                 System.out.println("");
             }
         }
+
     }
 
     void countAll() {
