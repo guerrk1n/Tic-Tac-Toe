@@ -104,29 +104,22 @@ public class Graph {
     void createNewGraphs() {
         int number_of_string_in_graph = 0;
         int vertex_level = 1;
-        for(int j=0; j<1; j++) {
-            for (int level = 9/*9*/; level > 0; level--) {
-                for (int i = 0; i < 3; i++) {
-                    for (int k = 0; k < 3; k++) {
-                        for (int m = 0; m < level; m++) { //m < level to be changed
-
-                            addVertex(i, k, level);
-                            addEdge(number_of_string_in_graph, vertex_level++);
-
-                        }
-                        number_of_string_in_graph++;
-
-                        System.out.println(vertex_level);
-                    }
-                }
+        for (int level = 9/*9*/; level > 0; level--) {
+               for (int i = 0; i < 3; i++) {
+                   for (int k = 0; k < 3; k++) {
+                       for (int m = 0; m < level; m++) { //m < level to be changed
+                           addVertex(i, k, level);
+                           addEdge(number_of_string_in_graph, vertex_level++);
+                       }
+                       number_of_string_in_graph++;
+                       System.out.println(vertex_level);
+                   }
+               }
                // System.out.println("-----------------------");
-                //printAdjMat();
-
-                if(level == 0){
-                    break;
-                }
+               if(level == 0){
+                   break;
+               }
             }
-
         }
     }
 
