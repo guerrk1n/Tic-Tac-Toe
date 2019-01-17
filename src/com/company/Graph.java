@@ -10,6 +10,7 @@ public class Graph {
     private byte adjMat[][] = new byte[z][z];
 
     private ArrayList<Vertex> vertexList;
+    private ArrayList<Vertex> parents;
 
     private Queue<Integer> theQueue;
     private Stack<Integer> theStack;
@@ -19,6 +20,7 @@ public class Graph {
 
     Graph() {
         vertexList = new ArrayList<>();
+        parents = new ArrayList<>();
         rightNow = new Position();
         theQueue = new Queue<>();
         theStack = new Stack<>();
@@ -113,6 +115,15 @@ public class Graph {
                    for (int k = 0; k < rightNow.TABLE_SIZE; k++) {
                        for (int local_level = 0; local_level < level; local_level++) {
                            Vertex parent = null;
+                           if (level == 9) {
+                               parent = new Vertex(0,0,0);
+                               parents.set(9,new Vertex(0,0,0));
+                           }
+                           else {
+                               parent = null;
+                               parents.set(level, new Vertex(i, k, level));
+                           }
+
                            addVertex(i, k, level, parent.theGame);
                            addEdge(number_of_string_in_graph, vertex_level++);
 
