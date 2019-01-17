@@ -125,6 +125,7 @@ public class Position {
             }
             System.out.println("");
         }
+        System.out.println("");
     }
 
     boolean isGoodEnd(){

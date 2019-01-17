@@ -5,18 +5,26 @@ import java.util.Date;
 public class Vertex {
     String label;
     int x; int y; int level;
-    private Date date;
+    Position theGame;
+
     public boolean wasVisited;
 
-    Vertex(Date date) {
-        this.date = date;
-        this.wasVisited = false;
-    }
+
     Vertex(int x, int y, int level) {
         this.x = x;
         this.y = y;
         this.level = level;
         this.wasVisited = false;
+
+    }
+
+    Vertex(int x, int y, int level, Object table[][]) {
+        this.x = x;
+        this.y = y;
+        this.level = level;
+        this.wasVisited = false;
+        this.theGame = new Position(table);
+
     }
     Vertex(String label) {
         this.label = label;
@@ -24,11 +32,7 @@ public class Vertex {
     }
 
     Vertex() {
-        this.date = new Date();
         this.wasVisited = false;
     }
 
-    void displayVertex() {
-        System.out.println(date);
-    }
 }

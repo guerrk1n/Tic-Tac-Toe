@@ -38,8 +38,8 @@ public class Main extends Application {
         mainGraph.createNewGraphs();
 
         //System.out.println("вывыв");
-        mainGraph.printAdjMat();
-        mainGraph.rightNow.makeMoveMan(1, 1);
+        //mainGraph.printAdjMat();
+        //mainGraph.rightNow.makeMoveMan(1, 1);
         System.out.println("");
 
         //mainGraph.rightNow.printTable();

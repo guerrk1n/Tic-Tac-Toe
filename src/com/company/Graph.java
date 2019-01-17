@@ -28,8 +28,12 @@ public class Graph {
         vertexList.add(new Vertex());
     }
 
-    void addVertex(int x, int y, int level) {
+    void addVertex(int x, int y, int level, Position theGame) {
         vertexList.add(new Vertex(x, y, level));
+    }
+
+    void addVertex(int x, int y, int level, Object table[][]) {
+        vertexList.add(new Vertex(x, y, level, table));
     }
 
     void addEdge(int start, int end) {
@@ -104,18 +108,25 @@ public class Graph {
     void createNewGraphs() {
         int number_of_string_in_graph = 0;
         int vertex_level = 1;
-        for (int level = 9/*9*/; level > 0; level--) {
-               for (int i = 0; i < 3; i++) {
-                   for (int k = 0; k < 3; k++) {
-                       for (int m = 0; m < level; m++) { //m < level to be changed
-                           addVertex(i, k, level);
+        for (int level = 9; level > 0; level--) {
+               for (int i = 0; i < rightNow.TABLE_SIZE; i++) {
+                   for (int k = 0; k < rightNow.TABLE_SIZE; k++) {
+                       for (int local_level = 0; local_level < level; local_level++) {
+                           addVertex(i, k, level, vertexList.get(1/*the real index of parent*/).theGame);
                            addEdge(number_of_string_in_graph, vertex_level++);
+
+                           if (vertexList.get(vertexList.size()).theGame.table[i][k].equals(0)) {
+                               if (level % 2 == 0) {
+                                   vertexList.get(vertexList.size()).theGame.makeMoveBot(i, k);
+                               } else {
+                                   vertexList.get(vertexList.size()).theGame.makeMoveMan(i, k);
+                               }
+                           }
+                           vertexList.get(vertexList.size()).theGame.printTable();
                        }
                        number_of_string_in_graph++;
-                       System.out.println(vertex_level);
                    }
                }
-               // System.out.println("-----------------------");
                if(level == 0){
                    break;
                }
