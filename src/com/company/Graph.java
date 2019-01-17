@@ -112,7 +112,8 @@ public class Graph {
                for (int i = 0; i < rightNow.TABLE_SIZE; i++) {
                    for (int k = 0; k < rightNow.TABLE_SIZE; k++) {
                        for (int local_level = 0; local_level < level; local_level++) {
-                           addVertex(i, k, level, vertexList.get(1/*the real index of parent*/).theGame);
+                           Vertex parent = null;
+                           addVertex(i, k, level, parent.theGame);
                            addEdge(number_of_string_in_graph, vertex_level++);
 
                            if (vertexList.get(vertexList.size()).theGame.table[i][k].equals(0)) {
