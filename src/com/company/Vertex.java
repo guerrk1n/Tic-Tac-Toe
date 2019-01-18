@@ -15,6 +15,7 @@ public class Vertex {
         this.y = y;
         this.level = level;
         this.wasVisited = false;
+        theGame = new Position();
 
     }
 

@@ -10,7 +10,7 @@ public class Graph {
     private byte adjMat[][] = new byte[z][z];
 
     private ArrayList<Vertex> vertexList;
-    private ArrayList<Vertex> parents;
+    private Vertex[] parents;
 
     private Queue<Integer> theQueue;
     private Stack<Integer> theStack;
@@ -20,7 +20,7 @@ public class Graph {
 
     Graph() {
         vertexList = new ArrayList<>();
-        parents = new ArrayList<>();
+        parents = new Vertex[10];
         rightNow = new Position();
         theQueue = new Queue<>();
         theStack = new Stack<>();
@@ -110,31 +110,37 @@ public class Graph {
     void createNewGraphs() {
         int number_of_string_in_graph = 0;
         int vertex_level = 1;
+
+        Vertex parent = null;
+        Vertex now = null;
+
         for (int level = 9; level > 0; level--) {
                for (int i = 0; i < rightNow.TABLE_SIZE; i++) {
                    for (int k = 0; k < rightNow.TABLE_SIZE; k++) {
+                       if (level == 9) {
+                           //parent = new Vertex(0, 0, 0);
+                           now = new Vertex(0, 0, 0);;
+                       } else {
+                           //parent = now;
+                       }
                        for (int local_level = 0; local_level < level; local_level++) {
-                           Vertex parent = null;
-                           if (level == 9) {
-                               parent = new Vertex(0,0,0);
-                               parents.set(9,new Vertex(0,0,0));
-                           }
-                           else {
-                               parent = null;
-                               parents.set(level, new Vertex(i, k, level));
-                           }
-
-                           addVertex(i, k, level, parent.theGame);
+                           //System.out.println("Let's print the table");
+                           //now.theGame.printTable();
+                           System.out.println("");
+                           addVertex(i, k, level, now.theGame);
                            addEdge(number_of_string_in_graph, vertex_level++);
 
-                           if (vertexList.get(vertexList.size()).theGame.table[i][k].equals(0)) {
+                           if (now.theGame.table[i][k].equals(0)) {
                                if (level % 2 == 0) {
-                                   vertexList.get(vertexList.size()).theGame.makeMoveBot(i, k);
+                                   vertexList.get(vertexList.size() - 1).theGame.makeMoveBot(i, k);
+                                   now.theGame.makeMoveBot(i, k);
                                } else {
-                                   vertexList.get(vertexList.size()).theGame.makeMoveMan(i, k);
+                                   vertexList.get(vertexList.size() - 1).theGame.makeMoveMan(i, k);
+                                   now.theGame.makeMoveMan(i, k);
                                }
                            }
-                           vertexList.get(vertexList.size()).theGame.printTable();
+                           vertexList.get(vertexList.size() - 1).theGame.printTable();
+                           //now = new Vertex(i, k, level - 1, parent.theGame.table);
                        }
                        number_of_string_in_graph++;
                    }
