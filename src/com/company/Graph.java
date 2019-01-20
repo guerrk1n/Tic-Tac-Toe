@@ -43,6 +43,16 @@ public class Graph {
         adjMat[end][start] = 1;
     }
 
+    void addEdge(int start, int end, boolean b) {
+        if (b) {
+            adjMat[start][end] = 1;
+            adjMat[end][start] = 1;
+        } else {
+            adjMat[start][end] = 2;
+            adjMat[end][start] = 2;
+        }
+    }
+
     void displayVertex(int v) {
         System.out.print(vertexList.get(v).label);
     }
@@ -98,7 +108,7 @@ public class Graph {
     }
 
     void printAdjMat() {
-        for (int i = 0; i < z; i++) {
+        for (int i = 0; i < 81; i++) {
             for (int k = 0; k < z; k++) {
                 System.out.print(adjMat[i][k] + " ");
             }
@@ -115,21 +125,27 @@ public class Graph {
         Vertex now = null;
 
         for (int level = 9; level > 0; level--) {
-               for (int i = 0; i < rightNow.TABLE_SIZE; i++) {
-                   for (int k = 0; k < rightNow.TABLE_SIZE; k++) {
-                       if (level == 9) {
-                           //parent = new Vertex(0, 0, 0);
-                           now = new Vertex(0, 0, 0);;
-                       } else {
-                           //parent = now;
-                       }
-                       for (int local_level = 0; local_level < level; local_level++) {
-                           //System.out.println("Let's print the table");
-                           //now.theGame.printTable();
-                           System.out.println("");
-                           addVertex(i, k, level, now.theGame);
-                           addEdge(number_of_string_in_graph, vertex_level++);
+            for (int i = 0; i < rightNow.TABLE_SIZE; i++) {
+                for (int k = 0; k < rightNow.TABLE_SIZE; k++) {
+                    if (level == 9) {
+                        //parent = new Vertex(0, 0, 0);
+                        now = new Vertex(0, 0, 0);
+                        ;
+                    } else {
+                        //parent = now;
+                    }
+                    for (int local_level = 0; local_level < level; local_level++) {
+                        //System.out.println("Let's print the table");
+                        //now.theGame.printTable();
+                        //System.out.println("");
+                        //byte m = adjMat[vertex_level][number_of_string_in_graph - 1];
 
+                        boolean b = true;
+                        if (level % 2 == 0) {
+                            b = false;
+                        } else b = true;
+                        addEdge(number_of_string_in_graph, vertex_level++, b);
+                           /*
                            if (now.theGame.table[i][k].equals(0)) {
                                if (level % 2 == 0) {
                                    vertexList.get(vertexList.size() - 1).theGame.makeMoveBot(i, k);
@@ -141,13 +157,15 @@ public class Graph {
                            }
                            vertexList.get(vertexList.size() - 1).theGame.printTable();
                            //now = new Vertex(i, k, level - 1, parent.theGame.table);
-                       }
-                       number_of_string_in_graph++;
-                   }
-               }
-               if(level == 0){
-                   break;
-               }
+                           */
+                    }
+                    number_of_string_in_graph++;
+                }
+            }
+            if (level == 0) {
+                break;
+            }
         }
+        printAdjMat();
     }
 }

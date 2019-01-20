@@ -23,38 +23,21 @@ public class Main extends Application {
 
     public static void main(String[] args) {
 
-        Graph mainGraph = new Graph();
-        mainGraph.addVertex("Root");
-        /*
-        int level = 9;
-        int number = 1;
-        for (int i = 0; i < mainGraph.rightNow.TABLE_SIZE; i++) {
-            for (int k = 0; k < mainGraph.rightNow.TABLE_SIZE; k++) {
-                mainGraph.addVertex(i, k, level);
-                mainGraph.addEdge(0, number++);
-            }
-        }
-        */
-        mainGraph.createNewGraphs();
+        //Graph mainGraph = new Graph();
+        //mainGraph.addVertex("Root");
 
-        //System.out.println("вывыв");
-        //mainGraph.printAdjMat();
-        //mainGraph.rightNow.makeMoveMan(1, 1);
-        System.out.println("");
+        ////mainGraph.createNewGraphs();
 
-        //mainGraph.rightNow.printTable();
+        //AlternativeGraph extraGraph = new AlternativeGraph();
+        //extraGraph.make();
+        //extraGraph.treeBuilding();
+
+        AlternativeGraph doubleGraph = new AlternativeGraph(1);
+        doubleGraph.make();
+
+
 
         //launch(args);
-        /*
-        while(true) {
-            mainGraph.rightNow.makeMoveMan(1,1);
-            mainGraph.rightNow.printTable();
-            System.out.println();
-            mainGraph.printAdjMat();
-            mainGraph.createNewGraphs();
-            if (mainGraph.rightNow.isGameOver()) break;
-        }
-        */
 
 
     }
