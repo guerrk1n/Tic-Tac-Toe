@@ -6,6 +6,9 @@ public class AlternativeGraph {
     private ArrayList<AlternativeVertex> alternativeVertexList = new ArrayList<>();
     AlternativeVertex parent;
 
+
+
+
     AlternativeGraph(int a) {
         addAlternativeVertex("Root", null);
         this.parent = alternativeVertexList.get(0);
@@ -40,11 +43,19 @@ public class AlternativeGraph {
         }
     }
 
+    AlternativeVertex getParent() {
+        parent = parent.parent;
+        return parent;
+    }
 
+    AlternativeVertex getChild(int index_of_child) {
+        parent = parent.children.get(index_of_child);
+        return parent;
+    }
 
 
     void level4(int level) {
-        //parent = root
+        for (int i = 0; i < level;)
         createCon(level);
     }
 

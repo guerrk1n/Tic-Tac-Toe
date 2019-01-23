@@ -1,4 +1,4 @@
-package com.company;
+package com.rubbish;
 
 public class Queue<T> {
     private final int SIZE = 20;
@@ -6,7 +6,7 @@ public class Queue<T> {
     private int front;
     private int rear;
 
-    Queue() {
+    public Queue() {
         queArray = new Object[SIZE];
         front = 0;
         rear = -1;

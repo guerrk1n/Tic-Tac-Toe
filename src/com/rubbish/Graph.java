@@ -1,4 +1,6 @@
-package com.company;
+package com.rubbish;
+
+import com.company.Position;
 
 import java.util.ArrayList;
 

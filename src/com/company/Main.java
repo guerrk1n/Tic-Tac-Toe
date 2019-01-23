@@ -44,19 +44,11 @@ public class Main extends Application {
 
     public void ButtonClick(ActionEvent actionEvent) {
 
-
-        Graph mainGraph = new Graph();
-/**
- *firstly, we must make a move, but we must check, if a cell is empty
- *if cell is empty we make a move and counter[]++
- *then computer must creat new graph and take a move
- * !! we must register move of computer and !!!remember it!!! ( not implemented in this version )
- */
         if (actionEvent.getSource() == button1) {
 
             if (counter[0] == 0) {
                 button1.setGraphic(new ImageView(image));
-                mainGraph.rightNow.makeMoveMan(0, 0);
+
                 // mainGraph.createNewGraphs();
                 counter[0]++;
             } else {
@@ -67,7 +59,7 @@ public class Main extends Application {
         if (actionEvent.getSource() == button2) {
             if (counter[1] == 0) {
                 button2.setGraphic(new ImageView(image));
-                mainGraph.rightNow.makeMoveMan(0, 1);
+
                 // mainGraph.createNewGraphs();
                 counter[1]++;
             } else {
@@ -79,7 +71,7 @@ public class Main extends Application {
         if (actionEvent.getSource() == button3) {
             if (counter[2] == 0) {
                 button3.setGraphic(new ImageView(image));
-                mainGraph.rightNow.makeMoveMan(0, 2);
+
                 // mainGraph.createNewGraphs();
                 counter[2]++;
             } else {
@@ -91,7 +83,7 @@ public class Main extends Application {
         if (actionEvent.getSource() == button4) {
             if (counter[3] == 0) {
                 button4.setGraphic(new ImageView(image));
-                mainGraph.rightNow.makeMoveMan(1, 0);
+
                 // mainGraph.createNewGraphs();
                 counter[3]++;
             } else {
@@ -103,7 +95,7 @@ public class Main extends Application {
         if (actionEvent.getSource() == button5) {
             if (counter[4] == 0) {
                 button5.setGraphic(new ImageView(image));
-                mainGraph.rightNow.makeMoveMan(1, 1);
+
                 // mainGraph.createNewGraphs();
                 counter[4]++;
             } else {
@@ -115,7 +107,7 @@ public class Main extends Application {
         if (actionEvent.getSource() == button6) {
             if (counter[5] == 0) {
                 button6.setGraphic(new ImageView(image));
-                mainGraph.rightNow.makeMoveMan(1, 2);
+
                 // mainGraph.createNewGraphs();
                 counter[5]++;
             } else {
@@ -127,7 +119,7 @@ public class Main extends Application {
         if (actionEvent.getSource() == button7) {
             if (counter[6] == 0) {
                 button7.setGraphic(new ImageView(image));
-                mainGraph.rightNow.makeMoveMan(2, 0);
+
                 // mainGraph.createNewGraphs();
                 counter[6]++;
             } else {
@@ -140,7 +132,7 @@ public class Main extends Application {
         if (actionEvent.getSource() == button8) {
             if (counter[7] == 0) {
                 button8.setGraphic(new ImageView(image));
-                mainGraph.rightNow.makeMoveMan(2, 1);
+
                 // mainGraph.createNewGraphs();
                 counter[7]++;
             } else {
@@ -152,7 +144,7 @@ public class Main extends Application {
         if (actionEvent.getSource() == button9) {
             if (counter[8] == 0) {
                 button9.setGraphic(new ImageView(image));
-                mainGraph.rightNow.makeMoveMan(2, 2);
+
                 // mainGraph.createNewGraphs();
                 counter[8]++;
             } else {

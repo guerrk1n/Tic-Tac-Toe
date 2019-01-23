@@ -1,11 +1,11 @@
-package com.company;
+package com.rubbish;
 
 public class Stack<T> {
     private final int SIZE = 20;
     private Object[] st;
     private int top;
 
-    Stack() {
+    public Stack() {
         st = new Object[SIZE];
         top = -1;
     }

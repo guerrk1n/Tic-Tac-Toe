@@ -1,6 +1,6 @@
-package com.company;
+package com.rubbish;
 
-import java.util.Date;
+import com.company.Position;
 
 public class Vertex {
     String label;
@@ -37,3 +37,4 @@ public class Vertex {
     }
 
 }
+

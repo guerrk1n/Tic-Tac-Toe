@@ -1,26 +1,26 @@
 package com.company;
 
 public class Position {
-    final int TABLE_SIZE = 3;
+    public final int TABLE_SIZE = 3;
     Object[][] table = new Object[TABLE_SIZE][TABLE_SIZE];
     int x;
     int y;
     //X is a player, so let's make X will be a char X;
     //We will change '0' to Y. I think, that way we will be easier to see the difference.
 
-    Position(Object[][] table) {
+    public Position(Object[][] table) {
         this.table = table;
     }
 
-    void makeMoveMan(int x, int y) {
+    public void makeMoveMan(int x, int y) {
         table[x][y] = 'X';
     }
 
-    void makeMoveBot(int x, int y) {
+    public void makeMoveBot(int x, int y) {
         table[x][y] = 'Y';
     }
 
-    int getNumbersMoves() {
+    public int getNumbersMoves() {
         int ans = 0;
         for (int i = 0; i < TABLE_SIZE; i++) {
             for (int k = 0; k < TABLE_SIZE; k++) {
@@ -32,7 +32,7 @@ public class Position {
         return ans;
     }
 
-    Position() {
+    public Position() {
         for (int i = 0; i < TABLE_SIZE; i++) {
             for (int k = 0; k < TABLE_SIZE; k++) {
                 table[i][k] = 0;
@@ -118,7 +118,7 @@ public class Position {
         return false;
     }
 
-    void printTable() {
+    public void printTable() {
         for (int i = 0; i < TABLE_SIZE; i++) {
             for (int k = 0; k < TABLE_SIZE; k++) {
                 System.out.print(table[i][k] + " ");
@@ -128,7 +128,7 @@ public class Position {
         System.out.println("");
     }
 
-    boolean isGoodEnd(){
+    public boolean isGoodEnd(){
         if (table[0][0].equals('Y'))
             if (table[0][1].equals('Y'))
                 if (table[0][2].equals('Y'))
