@@ -120,6 +120,11 @@ public class AlternativeGraph {
         /*3*/createCon(1);
         parent = parent.parent.children.get(1);//here
         /*4*/createCon(1); //10
+
+
+
+
+
         parent = parent.parent.parent.parent/*root*/.children.get(2).children.get(0).children.get(0);
         /*1*/createCon(1);
         parent = parent.parent.children.get(1);
