@@ -33,295 +33,124 @@ public class AlternativeGraph {
     void addAlternativeVertex(AlternativeVertex parent) {
         alternativeVertexList.add(parent);
     }
-    int i =0;
+
+    int i = 0;
+
     void addConnection(AlternativeVertex parent, AlternativeVertex child) {
-        System.out.println(parent.label +" " + i);
+        System.out.println(parent.label + " " + i);
         i++;
         child.parent = parent;
         parent.children.add(child);
     }
 
+
+    void createCon(int number_of_them) {
+        for (int i = 0; i < number_of_them; i++) {
+            addAlternativeVertex(parent);
+            addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
+        }
+    }
+
+
     void level4() {
-
         //parent = root
-
-        addAlternativeVertex(parent);
-        addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
-        addAlternativeVertex(parent);
-        addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
-        addAlternativeVertex(parent);
-        addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
-        addAlternativeVertex(parent);
-        addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
-
+        createCon(4);
     }
 
     void level3() {
         parent = parent.parent.children.get(0);
+        createCon(3);
         //level 3 available moves
-        addAlternativeVertex(parent);
-        addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
-        addAlternativeVertex(parent);
-        addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
-        addAlternativeVertex(parent);
-        addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
 
         parent = parent.parent.children.get(1);
-
-        addAlternativeVertex(parent);
-        addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
-        addAlternativeVertex(parent);
-        addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
-        addAlternativeVertex(parent);
-        addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
+        createCon(3);
         parent = parent.parent.children.get(2);
-
-        addAlternativeVertex(parent);
-        addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
-        addAlternativeVertex(parent);
-        addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
-        addAlternativeVertex(parent);
-        addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
+        createCon(3);
         parent = parent.parent.children.get(3);
-
-        addAlternativeVertex(parent);
-        addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
-        addAlternativeVertex(parent);
-        addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
-        addAlternativeVertex(parent);
-        addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
+        createCon(3);
         parent = parent.parent.children.get(0).children.get(0);
     }
 
 
     void level2() {
         {
-            addAlternativeVertex(parent);
-            addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
-            addAlternativeVertex(parent);
-            addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
+            createCon(2);
             parent = parent.parent.children.get(1);
-
-            addAlternativeVertex(parent);
-            addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
-            addAlternativeVertex(parent);
-            addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
+            createCon(2);
             parent = parent.parent.children.get(2);
-
-
-            addAlternativeVertex(parent);
-            addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
-            addAlternativeVertex(parent);
-            addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
-
+            createCon(2);
             parent = parent.parent.parent.children.get(1).children.get(0);
-
-
-            addAlternativeVertex(parent);
-            addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
-            addAlternativeVertex(parent);
-            addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
+            createCon(2);
             parent = parent.parent.children.get(1);
-
-            addAlternativeVertex(parent);
-            addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
-            addAlternativeVertex(parent);
-            addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
+            createCon(2);
             parent = parent.parent.children.get(2);
-
-            addAlternativeVertex(parent);
-            addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
-            addAlternativeVertex(parent);
-            addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
+            createCon(2);
             parent = parent.parent.parent.children.get(2).children.get(0);
-
-            addAlternativeVertex(parent);
-            addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
-            addAlternativeVertex(parent);
-            addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
+            createCon(2);
             parent = parent.parent.children.get(1);
-
-            addAlternativeVertex(parent);
-            addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
-            addAlternativeVertex(parent);
-            addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
+            createCon(2);
             parent = parent.parent.children.get(2);
-
-            addAlternativeVertex(parent);
-            addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
-            addAlternativeVertex(parent);
-            addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
+            createCon(2);
             parent = parent.parent.parent.children.get(3).children.get(0);
-
-            addAlternativeVertex(parent);
-            addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
-            addAlternativeVertex(parent);
-            addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
+            createCon(2);
             parent = parent.parent.children.get(1);
-
-            addAlternativeVertex(parent);
-            addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
-            addAlternativeVertex(parent);
-            addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
+            createCon(2);
             parent = parent.parent.children.get(2);
-
-            addAlternativeVertex(parent);
-            addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
-            addAlternativeVertex(parent);
-            addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
-            parent = parent.parent.parent.children.get(0).children.get(0).children.get(0);
-
-            addAlternativeVertex(parent);
-            addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
-            parent = parent.parent.children.get(1);
-
-            addAlternativeVertex(parent);
-            addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
-            parent = parent.parent.parent.children.get(1).children.get(0);
-
-            addAlternativeVertex(parent);
-            addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
-            parent = parent.parent.children.get(1);
-
-            addAlternativeVertex(parent);
-            addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
-            parent = parent.parent.parent.children.get(2).children.get(0);
-
-            addAlternativeVertex(parent);
-            addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
-            parent = parent.parent.children.get(1);
-
-            addAlternativeVertex(parent);
-            addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
-            parent = parent.parent.parent.parent.children.get(1).children.get(0).children.get(0);
-
-            addAlternativeVertex(parent);
-            addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
-            parent = parent.parent.children.get(1);
-
-            addAlternativeVertex(parent);
-            addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
-            parent = parent.parent.parent.children.get(1).children.get(0);
-
-            addAlternativeVertex(parent);
-            addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
-            parent = parent.parent.children.get(1);
-
-            addAlternativeVertex(parent);
-            addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
-            parent = parent.parent.parent.parent.children.get(2).children.get(0).children.get(0);
-
-            addAlternativeVertex(parent);
-            addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
-            parent = parent.parent.children.get(1);
-
-            addAlternativeVertex(parent);
-            addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
-            parent = parent.parent.parent.children.get(1).children.get(0);
-
-            addAlternativeVertex(parent);
-            addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
-            parent = parent.parent.children.get(1);
-
-            addAlternativeVertex(parent);
-            addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
-            parent = parent.parent.parent.children.get(2).children.get(0);
-
-            addAlternativeVertex(parent);
-            addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
-            parent = parent.parent.children.get(1);
-
-            addAlternativeVertex(parent);
-            addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
-            parent = parent.parent.parent.parent.children.get(3).children.get(0).children.get(0);
-
-            addAlternativeVertex(parent);
-            addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
-            parent = parent.parent.children.get(1);
-
-            addAlternativeVertex(parent);
-            addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
-            parent = parent.parent.parent.children.get(1).children.get(0);
-
-            addAlternativeVertex(parent);
-            addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
-            parent = parent.parent.children.get(1);
-
-            addAlternativeVertex(parent);
-            addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
-            parent = parent.parent.parent.children.get(2).children.get(0);
-
-            addAlternativeVertex(parent);
-            addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
-            parent = parent.parent.children.get(1);
-
-            addAlternativeVertex(parent);
-            addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
-
-            System.out.println("Finished");
+            createCon(2);
 
 
         }
+    }
+
+    private void level1() {
+        parent = parent.parent.parent.children.get(0).children.get(0).children.get(0);
+        createCon(1);
+        parent = parent.parent.children.get(1);
+        createCon(1);
+        parent = parent.parent.parent.children.get(1).children.get(0);
+        createCon(1);
+        parent = parent.parent.children.get(1);
+        createCon(1);
+        parent = parent.parent.parent.children.get(2).children.get(0);
+        createCon(1); //5
+        parent = parent.parent.children.get(1);
+        createCon(1);
+        parent = parent.parent.parent.parent.children.get(1).children.get(0).children.get(0);
+        createCon(1);
+        parent = parent.parent.children.get(1);
+        createCon(1);
+        parent = parent.parent.parent.children.get(1).children.get(0);
+        createCon(1);
+        parent = parent.parent.children.get(1);
+        createCon(1); //10
+        parent = parent.parent.parent.parent.children.get(2).children.get(0).children.get(0);
+        createCon(1);
+        parent = parent.parent.children.get(1);
+        createCon(1);
+        parent = parent.parent.parent.children.get(1).children.get(0);
+        createCon(1);
+        parent = parent.parent.children.get(1);
+        createCon(1);
+        parent = parent.parent.parent.children.get(2).children.get(0);
+        createCon(1); //15
+        parent = parent.parent.children.get(1);
+        createCon(1);
+        parent = parent.parent.parent.parent.children.get(3).children.get(0).children.get(0);
+        createCon(1);
+        parent = parent.parent.children.get(1);
+        createCon(1);
+        parent = parent.parent.parent.children.get(1).children.get(0);
+        createCon(1);
+        parent = parent.parent.children.get(1);
+        createCon(1); //20
+        parent = parent.parent.parent.children.get(2).children.get(0);
+        createCon(1);
+        parent = parent.parent.children.get(1);
+        createCon(1);//22
+        //two are missing. FIND IT!
+
+        System.out.println("Finished");
+
     }
 
 
@@ -329,6 +158,7 @@ public class AlternativeGraph {
         level4();
         level3();
         level2();
+        level1();
 
     }
 
