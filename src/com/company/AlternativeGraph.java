@@ -98,11 +98,11 @@ public class AlternativeGraph {
         }
     }
 
-    private void level1() {
+    void level1() {
         parent = parent.parent.parent.children.get(0).children.get(0).children.get(0);
         createCon(1);
         parent = parent.parent.children.get(1);
-        createCon(1);
+        createCon(1);//here
         parent = parent.parent.parent.children.get(1).children.get(0);
         createCon(1);
         parent = parent.parent.children.get(1);
