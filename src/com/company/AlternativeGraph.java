@@ -52,28 +52,24 @@ public class AlternativeGraph {
     }
 
 
-    void level4() {
+
+    void level4(int level) {
         //parent = root
-        createCon(4);
+        createCon(level);
     }
 
-    void level3() {
-        parent = parent.parent.children.get(0);
-        createCon(3);
+    void level3(int level) {
         //level 3 available moves
-
-        parent = parent.parent.children.get(1);
-        createCon(3);
-        parent = parent.parent.children.get(2);
-        createCon(3);
-        parent = parent.parent.children.get(3);
-        createCon(3);
-        parent = parent.parent.children.get(0).children.get(0);
+        for (int i = 0; i < 4; i++) {
+            parent = parent.parent.children.get(i);
+            createCon(level);
+        }
     }
 
 
     void level2() {
         {
+            parent = parent.parent.children.get(0).children.get(0);
             createCon(2);
             parent = parent.parent.children.get(1);
             createCon(2);
@@ -155,8 +151,8 @@ public class AlternativeGraph {
 
 
     void make() {
-        level4();
-        level3();
+        level4(4);
+        level3(3);
         level2();
         level1();
 
