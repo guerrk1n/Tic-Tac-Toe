@@ -23,7 +23,7 @@ public class Main extends Application {
 
     public static void main(String[] args) {
 
-        AlternativeGraph doubleGraph = new AlternativeGraph(1);
+        Graph doubleGraph = new Graph(1);
         doubleGraph.make();
         //launch(args);
     }
@@ -31,7 +31,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("tictactoe.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("fxmls/tictactoe.fxml"));
         primaryStage.setTitle("Tic Tac Toe");
         primaryStage.setScene(new Scene(root, 650, 400));
         primaryStage.show();

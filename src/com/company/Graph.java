@@ -2,35 +2,32 @@ package com.company;
 
 import java.util.ArrayList;
 
-public class AlternativeGraph {
-    private ArrayList<AlternativeVertex> alternativeVertexList = new ArrayList<>();
-    AlternativeVertex parent;
+public class Graph {
+    private ArrayList<Vertex> vertexList = new ArrayList<>();
+    Vertex parent;
 
-
-
-
-    AlternativeGraph(int a) {
-        addAlternativeVertex("Root", null);
-        this.parent = alternativeVertexList.get(0);
+    Graph(int a) {
+        addVertex("Root", null);
+        this.parent = vertexList.get(0);
     }
 
-    AlternativeGraph() {
-        alternativeVertexList = new ArrayList<>();
+    Graph() {
+        vertexList = new ArrayList<>();
     }
 
-    void addAlternativeVertex(String label, AlternativeVertex parent) {
-        alternativeVertexList.add(new AlternativeVertex(label));
+    void addVertex(String label, Vertex parent) {
+        vertexList.add(new Vertex(label));
     }
 
-    void addAlternativeVertex(int x, int y, int level, AlternativeVertex parent) {
-        alternativeVertexList.add(new AlternativeVertex(x, y, level, parent));
+    void addVertex(int x, int y, int level, Vertex parent) {
+        vertexList.add(new Vertex(x, y, level, parent));
     }
 
-    void addAlternativeVertex(AlternativeVertex parent) {
-        alternativeVertexList.add(parent);
+    void addVertex(Vertex parent) {
+        vertexList.add(parent);
     }
 
-    void addConnection(AlternativeVertex parent, AlternativeVertex child) {
+    void addConnection(Vertex parent, Vertex child) {
         child.parent = parent;
         parent.children.add(child);
     }
@@ -38,17 +35,17 @@ public class AlternativeGraph {
 
     void createCon(int number_of_them) {
         for (int i = 0; i < number_of_them; i++) {
-            addAlternativeVertex(parent);
-            addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
+            addVertex(parent);
+            addConnection(parent, vertexList.get(vertexList.size() - 1));
         }
     }
 
-    AlternativeVertex getParent() {
+    Vertex getParent() {
         parent = parent.parent;
         return parent;
     }
 
-    AlternativeVertex getChild(int index_of_child) {
+    Vertex getChild(int index_of_child) {
         parent = parent.children.get(index_of_child);
         return parent;
     }
@@ -56,7 +53,7 @@ public class AlternativeGraph {
 
     void level4(int level) {
         for (int i = 0; i < level;)
-        createCon(level);
+            createCon(level);
     }
 
     void level3(int level) {

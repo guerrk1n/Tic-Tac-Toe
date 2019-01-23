@@ -2,17 +2,17 @@ package com.company;
 
 import java.util.ArrayList;
 
-public class AlternativeVertex {
+public class Vertex {
     String label;
     boolean wasVisited;
     int x;
     int y;
     int level;
-    AlternativeVertex parent;
-    ArrayList<AlternativeVertex> children;
+    Vertex parent;
+    ArrayList<Vertex> children;
     Position theGame;
 
-    AlternativeVertex(int x, int y, int level, AlternativeVertex parent) {
+    Vertex(int x, int y, int level, Vertex parent) {
         this.label = "" + x + " " + y + " " + level + " " + wasVisited;
         this.x = x;
         this.y = y;
@@ -23,7 +23,7 @@ public class AlternativeVertex {
         theGame = parent.theGame;
     }
 
-    AlternativeVertex(AlternativeVertex parent) {
+    Vertex(Vertex parent) {
         this.parent = parent;
         children = new ArrayList<>();
         theGame = parent.theGame;
@@ -32,7 +32,7 @@ public class AlternativeVertex {
 
 
 
-    AlternativeVertex(String label) {
+    Vertex(String label) {
         this.label = label;
         wasVisited = false;
         children = new ArrayList<>();
