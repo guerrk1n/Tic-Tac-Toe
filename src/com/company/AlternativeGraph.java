@@ -99,50 +99,51 @@ public class AlternativeGraph {
     }
 
     void level1() {
+        // we get the first parent of level 2
         parent = parent.parent.parent.children.get(0).children.get(0).children.get(0);
-        createCon(1);
+        /*1*/createCon(1);
         parent = parent.parent.children.get(1);
-        createCon(1);//here
+        /*2*/createCon(1);//+
         parent = parent.parent.parent.children.get(1).children.get(0);
-        createCon(1);
-        parent = parent.parent.children.get(1);
-        createCon(1);
+        /*3*/createCon(1);
+        parent = parent.parent.children.get(1); //+
+        /*4*/createCon(1);
         parent = parent.parent.parent.children.get(2).children.get(0);
-        createCon(1); //5
+        /*5*/createCon(1); //5
         parent = parent.parent.children.get(1);
-        createCon(1);
-        parent = parent.parent.parent.parent.children.get(1).children.get(0).children.get(0);
-        createCon(1);
+        /*6*/createCon(1);
+        parent = parent.parent.parent.parent/*root*/.children.get(1).children.get(0).children.get(0);
+        /*1*/createCon(1);
         parent = parent.parent.children.get(1);
-        createCon(1);
+        /*2*/createCon(1);
         parent = parent.parent.parent.children.get(1).children.get(0);
-        createCon(1);
+        /*3*/createCon(1);
+        parent = parent.parent.children.get(1);//here
+        /*4*/createCon(1); //10
+        parent = parent.parent.parent.parent/*root*/.children.get(2).children.get(0).children.get(0);
+        /*1*/createCon(1);
         parent = parent.parent.children.get(1);
-        createCon(1); //10
-        parent = parent.parent.parent.parent.children.get(2).children.get(0).children.get(0);
-        createCon(1);
-        parent = parent.parent.children.get(1);
-        createCon(1);
+        /*2*/createCon(1);
         parent = parent.parent.parent.children.get(1).children.get(0);
-        createCon(1);
+        /*3*/createCon(1);
         parent = parent.parent.children.get(1);
-        createCon(1);
+        /*4*/createCon(1);
         parent = parent.parent.parent.children.get(2).children.get(0);
-        createCon(1); //15
+        /*5*/createCon(1); //15
         parent = parent.parent.children.get(1);
-        createCon(1);
-        parent = parent.parent.parent.parent.children.get(3).children.get(0).children.get(0);
-        createCon(1);
+        /*6*/createCon(1);
+        parent = parent.parent.parent.parent/*root*/.children.get(3).children.get(0).children.get(0);
+        /*1*/createCon(1);
         parent = parent.parent.children.get(1);
-        createCon(1);
+        /*2*/createCon(1);
         parent = parent.parent.parent.children.get(1).children.get(0);
-        createCon(1);
+        /*3*/createCon(1);
         parent = parent.parent.children.get(1);
-        createCon(1); //20
+        /*4*/createCon(1); //20
         parent = parent.parent.parent.children.get(2).children.get(0);
-        createCon(1);
+        /*5*/createCon(1);
         parent = parent.parent.children.get(1);
-        createCon(1);//22
+        /*6*/createCon(1);//22
         //two are missing. FIND IT!
 
         System.out.println("Finished");
