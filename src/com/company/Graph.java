@@ -52,7 +52,7 @@ public class Graph {
 
 
     void level4(int level) {
-        for (int i = 0; i < level;)
+        for (int i = 0; i < level; i++)
             createCon(level);
     }
 
@@ -158,6 +158,7 @@ public class Graph {
         level3(3);
         level2();
         level1();
+        System.out.println("I am working");
 
     }
 
