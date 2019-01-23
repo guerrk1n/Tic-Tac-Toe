@@ -23,23 +23,9 @@ public class Main extends Application {
 
     public static void main(String[] args) {
 
-        //Graph mainGraph = new Graph();
-        //mainGraph.addVertex("Root");
-
-        ////mainGraph.createNewGraphs();
-
-        //AlternativeGraph extraGraph = new AlternativeGraph();
-        //extraGraph.make();
-        //extraGraph.treeBuilding();
-
         AlternativeGraph doubleGraph = new AlternativeGraph(1);
         doubleGraph.make();
-
-
-
         //launch(args);
-
-
     }
 
 

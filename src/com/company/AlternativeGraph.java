@@ -3,23 +3,16 @@ package com.company;
 import java.util.ArrayList;
 
 public class AlternativeGraph {
-    final int MAX_VERTS = 1000;
-    //private int adj_Mat[][] = new int[MAX_VERTS][MAX_VERTS];
     private ArrayList<AlternativeVertex> alternativeVertexList = new ArrayList<>();
-    //Position rightNow;
-
     AlternativeVertex parent;
 
     AlternativeGraph(int a) {
-
         addAlternativeVertex("Root", null);
         this.parent = alternativeVertexList.get(0);
     }
 
-
     AlternativeGraph() {
         alternativeVertexList = new ArrayList<>();
-        //rightNow = new Position();
     }
 
     void addAlternativeVertex(String label, AlternativeVertex parent) {
@@ -34,11 +27,7 @@ public class AlternativeGraph {
         alternativeVertexList.add(parent);
     }
 
-    int i = 0;
-
     void addConnection(AlternativeVertex parent, AlternativeVertex child) {
-        System.out.println(parent.label + " " + i);
-        i++;
         child.parent = parent;
         parent.children.add(child);
     }
@@ -50,6 +39,7 @@ public class AlternativeGraph {
             addConnection(parent, alternativeVertexList.get(alternativeVertexList.size() - 1));
         }
     }
+
 
 
 
