@@ -4,9 +4,12 @@ import java.util.ArrayList;
 
 public class Graph {
     private ArrayList<Vertex> vertexList = new ArrayList<>();
-    Vertex parent;
+    private Vertex parent;
+    private int SIZE;
 
-    Graph(int a) {
+
+    Graph(int size) {
+        this.SIZE = size;
         addVertex("Root", null);
         this.parent = vertexList.get(0);
     }
@@ -40,7 +43,7 @@ public class Graph {
         }
     }
 
-    Vertex getParent() {
+    Vertex parentUp() {
         parent = parent.parent;
         return parent;
     }
@@ -59,7 +62,9 @@ public class Graph {
     void level3(int level) {
         //level 3 available moves
         for (int i = 0; i < 4; i++) {
-            parent = parent.parent.children.get(i);
+            //parent = parent.parent.children.get(i);
+            parentUp();
+            getChild(i);
             createCon(level);
         }
     }
