@@ -6,6 +6,7 @@ public class Graph {
     private ArrayList<Vertex> vertexList = new ArrayList<>();
     private Vertex parent;
     private int SIZE;
+    int counter = 0;
 
 
     Graph(int size) {
@@ -40,6 +41,7 @@ public class Graph {
         for (int i = 0; i < number_of_them; i++) {
             addVertex(parent);
             addConnection(parent, vertexList.get(vertexList.size() - 1));
+            counter++;
         }
     }
 
@@ -55,18 +57,21 @@ public class Graph {
 
 
     void level4(int level) {
-        for (int i = 0; i < level; i++)
             createCon(level);
+        System.out.println(counter + "!");
     }
 
     void level3(int level) {
         //level 3 available moves
-        for (int i = 0; i < 4; i++) {
-            //parent = parent.parent.children.get(i);
-            parentUp();
-            getChild(i);
-            createCon(level);
-        }
+        parent = parent.parent.children.get(0);
+        createCon(3);
+        parent = parent.parent.children.get(1);
+        createCon(3);
+        parent = parent.parent.children.get(2);
+        createCon(3);
+        parent = parent.parent.children.get(3);
+        createCon(3);
+
     }
 
 
@@ -102,6 +107,7 @@ public class Graph {
     }
 
     void level1() {
+        System.out.println(counter +" = ");
         // we get the first parent of level 2
         parent = parent.parent.parent.children.get(0).children.get(0).children.get(0);
         createCon(1);
@@ -163,7 +169,7 @@ public class Graph {
         level3(3);
         level2();
         level1();
-        System.out.println("I am working");
+        System.out.println("I am working = " + counter) ;
 
     }
 
