@@ -36,7 +36,7 @@ public class Graph {
         vertexList.add(new Vertex(x, y, level));
     }
 
-    void addVertex(int x, int y, int level, Object table[][]) {
+    void addVertex(int x, int y, int level, char table[][]) {
         vertexList.add(new Vertex(x, y, level, table));
     }
 

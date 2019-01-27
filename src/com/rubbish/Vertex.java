@@ -19,7 +19,7 @@ public class Vertex {
 
     }
 
-    Vertex(int x, int y, int level, Object table[][]) {
+    Vertex(int x, int y, int level, char table[][]) {
         this.x = x;
         this.y = y;
         this.level = level;

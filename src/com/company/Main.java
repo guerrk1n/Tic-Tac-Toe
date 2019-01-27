@@ -25,7 +25,7 @@ public class Main extends Application {
 
     public static void main(String[] args) {
 
-        com.idea.Graph ideaGraph = new com.idea.Graph(4);
+        com.idea.Graph ideaGraph = new com.idea.Graph(3);
         ideaGraph.create();
         //launch(args);
     }
