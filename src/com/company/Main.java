@@ -1,6 +1,8 @@
 package com.company;
 
 
+import com.idea.*;
+import com.idea.Graph;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -23,8 +25,8 @@ public class Main extends Application {
 
     public static void main(String[] args) {
 
-        Graph doubleGraph = new Graph(1);
-        doubleGraph.make();
+        com.idea.Graph ideaGraph = new com.idea.Graph(4);
+        ideaGraph.create();
         //launch(args);
     }
 
